@@ -1,5 +1,6 @@
 pipeline {
 <<<<<<< HEAD
+<<<<<<< HEAD
   agent any
   stages {
     stage('Checkout') {
@@ -14,6 +15,14 @@ pipeline {
         }
 >>>>>>> edd865b... teht
     }
+=======
+    // agent {
+    //     docker {
+    //         image 'node:14-alpine'
+    //         args '-v /var/run/docker.sock:/var/run/docker.sock'
+    //     }
+    // }
+>>>>>>> f0462e9... yfkjy
 
     stages {
         stage('Checkout') {
