@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --testTimeout=50000 --detectOpenHandles",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=5000",
     "start": "node server.js",
     "dev": "nodemon -L server.js"
   },
