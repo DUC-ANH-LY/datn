@@ -8,7 +8,7 @@ pipeline {
     }
 
     tools {
-        nodejs 'NodeJs'
+        nodejs '18.14.0'
     }
 
     stages {
@@ -101,7 +101,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Docker Login and Push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
