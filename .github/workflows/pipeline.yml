@@ -36,7 +36,8 @@ jobs:
         working-directory: ./server
         run: |
           npm install
-          echo "MONGODB_URI is $MONGODB_URI"
+          host=$(echo $MONGODB_URI | sed -E 's/.*@([^/]+).*/\1/')
+          echo "MongoDB Host is: $host"
           export MONGODB_URI=$MONGODB_URI
           export TOKEN_KEY=$TOKEN_KEY
           export EMAIL=$EMAIL
