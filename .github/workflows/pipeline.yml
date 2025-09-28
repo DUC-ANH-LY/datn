@@ -36,6 +36,7 @@ jobs:
         working-directory: ./server
         run: |
           npm install
+          echo "MONGODB_URI is $MONGODB_URI"
           export MONGODB_URI=$MONGODB_URI
           export TOKEN_KEY=$TOKEN_KEY
           export EMAIL=$EMAIL
