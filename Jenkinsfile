@@ -79,6 +79,12 @@ pipeline {
 
         stage('Server Tests') {
             steps {
+                withCredentials([secretText(credentialsId: 'mongodb', variable: 'MONGODB_URI')]) {
+                    dir('server') {
+                        sh "export MONGODB_URI=$MONGODB_URI"
+                    }
+                }
+                
                 dir('server') {
                     sh 'npm install'
                     sh 'npm run test'
