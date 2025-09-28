@@ -1,10 +1,18 @@
 pipeline {
+<<<<<<< HEAD
   agent any
   stages {
     stage('Checkout') {
       steps {
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/itsrakeshhq/productivity-app.git']]])
       }
+=======
+    agent {
+        docker {
+            image 'node:14-alpine'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+>>>>>>> edd865b... teht
     }
 
     stages {
