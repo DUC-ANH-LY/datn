@@ -8,7 +8,8 @@ pipeline {
     }
 
     tools {
-        nodejs '18.14.0'
+        nodejs '18.14.0',
+        docker 'latest'
     }
 
     stages {
