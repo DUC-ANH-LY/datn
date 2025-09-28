@@ -7,7 +7,10 @@ require("dotenv").config();
 
 /* Connecting to the database before each test. */
 beforeAll(async () => {
-  await mongoose.connect(process.env.MONGODB_URI);
+  await mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 });
 
 /* Closing database connection after each test. */
